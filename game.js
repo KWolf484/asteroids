@@ -416,9 +416,9 @@ Ship = function () {
       this.children.exhaust.visible = false;
     }
 
+    this.delayBeforeBullet -= delta;
     if (this.delayBeforeBullet > 0) {
-      this.delayBeforeBullet = 10;
-      this.delayBeforeBullet -= delta;
+      
     }
     if (KEY_STATUS.space) {
       if (this.delayBeforeBullet <= 0) {
@@ -538,8 +538,9 @@ BigAlien = function () {
       this.vel.y = -this.vel.y;
     }
 
+    this.delayBeforeBullet -= delta;
     if (this.delayBeforeBullet <= 0) {
-      this.delayBeforeBullet -= delta;
+      this.delayBeforeBullet = 10;
       for (var i = 0; i < this.bullets.length; i++) {
         if (!this.bullets[i].visible) {
           bullet = this.bullets[i];
