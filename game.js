@@ -418,7 +418,7 @@ Ship = function () {
 
     this.delayBeforeBullet -= delta;
     if (this.delayBeforeBullet > 0) {
-      
+      this.delayBeforeBullet = 10;
     }
     if (KEY_STATUS.space) {
       if (this.delayBeforeBullet <= 0) {
